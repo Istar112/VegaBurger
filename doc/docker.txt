@@ -1,0 +1,2 @@
+docker exec -it NOMBRE_DEL_CONTENEDOR mysql -u root -p // para entrar a mi base de datos como root vegaburguer
+descargar el driver igual que derbi y poner la

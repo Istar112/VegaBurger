@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: vegaburguer
+      MYSQL_DATABASE: vegaburguer
+      MYSQL_USER: victor
+      MYSQL_PASSWORD: victor
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
