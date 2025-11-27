@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 data class LineaPedido (
     var id: String,
     var unidades: Int,
-    var uuidProducto: String,
+    var idProducto: String,
     var precio: Float
 )

@@ -1,7 +1,7 @@
 
 create table dependiente(
     id int,
-    nombre varchar(50) not null,
+    name varchar(50) not null,
     email varchar(100) not null,
     password varchar(100) not null,
     is_admin boolean not null,
