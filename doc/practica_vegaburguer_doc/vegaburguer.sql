@@ -8,7 +8,7 @@ create table dependiente(
     img_path varchar(255) not null,
     activo boolean default false not null,
     primary key(id)
-)
+);
 
 create table pedido(
     id int,
@@ -19,13 +19,13 @@ create table pedido(
     np_pendiente_entrega int not null,
     primary key(id),
     foreign key(id_dependiente) references dependiente(id) on delete cascade
-) 
+);
 
 create table categoria(
     id int,
     nombre varchar(50) not null,
     primary key(id)
-)
+);
 create table producto(
     id int,
     id_categoria int not null,
@@ -33,9 +33,10 @@ create table producto(
     precio decimal(10,2) not null,
     pendiente_entrega boolean not null,
     descripcion varchar(255),
+    img_path varchar(255),
     primary key(id),
     foreign key(id_categoria) references categoria(id) on delete cascade
-) 
+);
 
 create table linea_pedido(
     id int,
@@ -46,5 +47,5 @@ create table linea_pedido(
     primary key(id),
     foreign key(id_producto) references producto(id) on delete cascade,
     foreign key(id_pedido) references pedido(id) on delete cascade
-) 
+);
 
