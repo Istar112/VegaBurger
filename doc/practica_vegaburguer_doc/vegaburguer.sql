@@ -24,6 +24,7 @@ create table pedido(
 create table categoria(
     id int,
     nombre varchar(50) not null,
+    activar boolean not null,
     primary key(id)
 );
 create table producto(

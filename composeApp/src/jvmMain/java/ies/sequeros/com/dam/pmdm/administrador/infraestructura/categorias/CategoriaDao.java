@@ -22,9 +22,9 @@ public class CategoriaDao implements IDao<Categoria> {
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where nombre=?";
     private final String deletebyid = "delete from " + table_name + " where id='?'";
-    private final String insert = "INSERT INTO " + table_name + " (id, nombre, img_path) " +
-            "VALUES (?, ?, ?)";
-    private final String update = "UPDATE " + table_name + " SET nombre = ?, img_path = ? " +
+    private final String insert = "INSERT INTO " + table_name + " (id, nombre, img_path,activar) " +
+            "VALUES (?, ?, ?, ?)";
+    private final String update = "UPDATE " + table_name + " SET nombre = ?, img_path = ?, activar = ? " +
             "WHERE id = ?";
     
     public CategoriaDao() {
@@ -123,6 +123,7 @@ public class CategoriaDao implements IDao<Categoria> {
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getNombre() +
                             ", [2]=" + item.getImgPath() +
+                            ", [3]=" + item.getActivar() +
                             "]"
             );
         } catch (final SQLException ex) {
@@ -168,6 +169,7 @@ public class CategoriaDao implements IDao<Categoria> {
                             " | Params: [1]=" + item.getId() +
                             ", [2]="+ item.getNombre() +
                             ", [3]=" + item.getImgPath() +
+                            ", [4]=" + item.getActivar() +
                             "]"
             );
 
@@ -186,7 +188,8 @@ public class CategoriaDao implements IDao<Categoria> {
             sc=new Categoria(
                     r.getString("id"),
                     r.getString("nombre"),
-                    r.getString("imgPath")
+                    r.getString("imgPath"),
+                    r.getBoolean("activar")
             );
                   
             return sc;

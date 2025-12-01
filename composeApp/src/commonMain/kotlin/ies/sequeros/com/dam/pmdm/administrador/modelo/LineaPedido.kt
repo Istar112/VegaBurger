@@ -7,5 +7,6 @@ data class LineaPedido (
     var id: String,
     var unidades: Int,
     var idProducto: String,
+    var idPedido: String,
     var precio: Float
 )
