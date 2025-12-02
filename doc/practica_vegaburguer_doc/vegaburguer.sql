@@ -1,18 +1,17 @@
-
 create table dependiente(
-    id int,
+    id varchar(50),
     name varchar(50) not null,
     email varchar(100) not null,
     password varchar(100) not null,
+    image_path varchar(255) not null,
+    enabled boolean default false not null,
     is_admin boolean not null,
-    img_path varchar(255) not null,
-    activo boolean default false not null,
     primary key(id)
 );
 
 create table pedido(
-    id int,
-    id_dependiente int,
+    id varchar(50) not null,
+    id_dependiente varchar(50) not null,
     np_totales int not null,
     nombre_usuario varchar(50) not null,
     importe_total decimal(10,2) not null,
@@ -22,14 +21,14 @@ create table pedido(
 );
 
 create table categoria(
-    id int,
+    id varchar(50) not null,
     nombre varchar(50) not null,
     activar boolean not null,
     primary key(id)
 );
 create table producto(
-    id int,
-    id_categoria int not null,
+    id varchar(50) not null,
+    id_categoria varchar(50) not null,
     nombre varchar(50) not null,
     precio decimal(10,2) not null,
     pendiente_entrega boolean not null,
@@ -40,9 +39,9 @@ create table producto(
 );
 
 create table linea_pedido(
-    id int,
-    id_producto int,
-    id_pedido int,
+    id varchar(50) not null,
+    id_producto varchar(50),
+    id_pedido varchar(50),
     unidades int not null,
     precio decimal(10,2) not null,
     primary key(id),
