@@ -116,21 +116,25 @@ java.sql.SQLSyntaxErrorException: Unknown column 'image_path' in 'field list'
 
 nov 28, 2025 5:19:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
 INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-nov 28, 2025 6:46:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-nov 28, 2025 6:47:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 4:11:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:26:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:29:00 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:32:09 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:34:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:39:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
-dic 03, 2025 5:43:20 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFORMACIÓN: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 02, 2025 10:29:16 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 02, 2025 10:30:12 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:12 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=true, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:13 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:13 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=false, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:13 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:13 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=true, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=false, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=true, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
