@@ -44,6 +44,7 @@ import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
@@ -142,7 +143,7 @@ fun MainAdministrador(
 
                 onExit()
             }, "Close", false)
-            )
+        )
     )
 
     //icono seleccionado
@@ -179,6 +180,21 @@ fun MainAdministrador(
                     }
                 )
             }
+
+            composable(AdminRoutes.Categorias) {
+                Categorias(
+                    mainViewModel,
+                    categoriasViewModel,
+                    onSelectItem = {
+                        categoriasViewModel.setSelectedCategoria(it)
+                        navController.navigate(AdminRoutes.Categoria) {
+                            launchSingleTop = true
+                        }
+                    }
+                )
+            }
+
+            // pantalla de formulario
             composable (AdminRoutes.Categoria){
                 CategoriaForm(
                     categoriasViewModel,{
@@ -192,8 +208,6 @@ fun MainAdministrador(
 
         }
     }
-
-
 
     if (wai?.windowSizeClass?.windowWidthSizeClass == WindowWidthSizeClass.COMPACT) {
         Scaffold(
@@ -230,10 +244,10 @@ fun MainAdministrador(
                     )
                 ) {
                     Column(
-                        modifier = Modifier.fillMaxHeight()  // ocupa todo el alto del drawer
+                        modifier = Modifier.fillMaxHeight()
                             .padding(vertical = 16.dp),
-                        verticalArrangement = Arrangement.Center,  // centra verticalmente
-                        horizontalAlignment = Alignment.CenterHorizontally  // opcional: centra horizontalmente
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
 
                         Spacer(Modifier.height(16.dp))
@@ -270,7 +284,6 @@ fun MainAdministrador(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(16.dp)
-                        // Add a fixed height constraint to prevent "Size out of range" error
                         .height(600.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
@@ -284,5 +297,3 @@ fun MainAdministrador(
 
 
 }
-
-
