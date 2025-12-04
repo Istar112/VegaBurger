@@ -34,6 +34,7 @@ create table producto(
     pendiente_entrega boolean not null,
     descripcion varchar(255),
     img_path varchar(255),
+    activar boolean default false,
     primary key(id),
     foreign key(id_categoria) references categoria(id) on delete cascade
 );

@@ -1,8 +1,6 @@
-package ies.sequeros.com.dam.pmdm.administrador.modelo
-import kotlinx.serialization.Serializable
+package ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.actualizar
 
-@Serializable
-data class Producto (
+data class ActualizarProductoCommand (
     var id: String,
     var nombre: String,
     var imgPath: String,

@@ -10,19 +10,22 @@ import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministrador
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 
 @Suppress("ViewModelConstructorInComposable")
 @Composable
 
 fun App(
-    dependienteRepositorio: IDependienteRepositorio,
+    dependienteRepositorio : IDependienteRepositorio,
     categoriaRepository: ICategoriaRepositorio,
-    almacenImagenes: AlmacenDatos
+    productosRepositorio: IProductoRepositorio,
+    almacenImagenes:AlmacenDatos    
 ) {
 
     //view model
@@ -32,6 +35,9 @@ fun App(
     val dependientesViewModel = viewModel{ DependientesViewModel(
         dependienteRepositorio, almacenImagenes
     )}
+    val productosViewModel = viewModel { ProductosViewModel(
+       productosRepositorio, almacenImagenes
+    ) }
 
     val categoriasViewModel = viewModel{ CategoriasViewModel(
         categoriaRepository, almacenImagenes
@@ -52,8 +58,14 @@ fun App(
                 },{},{})
             }
             composable (AppRoutes.Administrador){
-                MainAdministrador(appViewModel,mainViewModel,administradorViewModel,
-                    dependientesViewModel,categoriasViewModel,{
+                MainAdministrador(
+                    appViewModel,
+                    mainViewModel,
+                    administradorViewModel,
+                    dependientesViewModel,
+                    categoriasViewModel,
+                    productosViewModel,
+                     {
                     navController.popBackStack()
                 })
             }

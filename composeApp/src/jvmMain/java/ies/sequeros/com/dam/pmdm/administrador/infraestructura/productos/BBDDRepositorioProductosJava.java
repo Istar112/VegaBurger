@@ -22,6 +22,10 @@ public class BBDDRepositorioProductosJava {
     public void add(Producto item) {
         this.dao.insert(item);
     }
+    public boolean remove(Producto item){
+        this.dao.delete(item);
+        return true;
+    }
     public boolean remove(String id){
         var item=this.dao.getById(id);
         if(item!=null){
