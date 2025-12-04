@@ -42,6 +42,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaForm
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
@@ -61,6 +63,7 @@ fun MainAdministrador(
     productosViewModel: ProductosViewModel,
 
 
+    categoriasViewModel: CategoriasViewModel,
     onExit: () -> Unit
 ) {
     val navController = rememberNavController()
@@ -180,6 +183,7 @@ fun MainAdministrador(
                     }
                 )
             }
+
             // añado el producto
             composable (AdminRoutes.Productos){
                 Productos(mainViewModel,productosViewModel,{
@@ -191,13 +195,25 @@ fun MainAdministrador(
             }
             // añado el form
             composable (AdminRoutes.Producto) {
-                ProductoForm(productosViewModel, {
-                    navController.popBackStack()
-                }, {
-                    productosViewModel.save(it)
-                    navController.popBackStack()
-                }
+                  ProductoForm(productosViewModel, {
+                      navController.popBackStack()
+                  }, {
+                      productosViewModel.save(it)
+                      navController.popBackStack()
+                  }
                 )
+            }
+            composable (AdminRoutes.Categoria){
+                CategoriaForm(
+                    categoriasViewModel,{
+                        navController.popBackStack()
+                    },{
+                        categoriasViewModel.save(it)
+                        navController.popBackStack()
+                    }
+                )
+            }
+
 
             }
         }

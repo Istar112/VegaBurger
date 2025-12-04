@@ -5,7 +5,11 @@ import androidx.compose.ui.window.application
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava
+
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemCategoriaRepository
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
+
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
@@ -15,9 +19,11 @@ fun main() = application {
     val dependienteRepositorioJava=BBDDRepositorioDependientesJava("/app.properties")
     val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
 
+
     val productoRepositorioJava= BBDDRepositorioProductosJava("/app.properties")
     val productoRepositorio: IProductoRepositorio = BBDDProductoRepository(productoRepositorioJava)
-
+    
+    val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
 
     configureExternalLogging("logging.properties")
     Window(
@@ -28,10 +34,13 @@ fun main() = application {
         title = "VegaBurguer",
     ) {
         //se envuelve el repositorio en java en uno que exista en Kotlin
+
         App(
             dependienteRepositorio,
+            categoriaRepository,
             productoRepositorio,
             AlmacenDatos())
+
     }
 }
 fun configureExternalLogging(path: String) {
