@@ -32,6 +32,10 @@ public class BBDDRepositorioCategoriasJava {
         this.dao.insert(item);
     }
 
+    public void remove(Categoria item) {
+        this.dao.delete(item);
+    }
+
     public boolean remove(String id) {
         var item = this.dao.getById(id);
         if (item != null) {
