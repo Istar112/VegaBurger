@@ -1,9 +1,7 @@
-package ies.sequeros.com.dam.pmdm.administrador.modelo
-import kotlinx.serialization.Serializable
+package ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.crear
 
-@Serializable
-data class Producto (
-    var id: String,
+data class CrearProductoCommand (
+    //var id: String,
     var nombre: String,
     var imgPath: String,
     var pendienteEntrega: Boolean,

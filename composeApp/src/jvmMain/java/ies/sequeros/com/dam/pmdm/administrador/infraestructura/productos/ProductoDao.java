@@ -23,11 +23,11 @@ public class ProductoDao implements IDao<Producto> {
     private final String findbyname = "select * from " + table_name + " where nombre=?";
     private final String deletebyid = "delete from " + table_name + " where id=?";
     private final String insert = "INSERT INTO " + table_name + 
-            " (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            " (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path, activar) " +
+            "VALUES (?, ?, ?, ?, ?, ?, ?,?)";
     
     private final String update = "UPDATE " + table_name +
-            " SET id_categoria = ?, nombre = ?, precio = ?, pendiente_entrega = ?, descripcion = ?, img_path = ? " +
+            " SET id_categoria = ?, nombre = ?, precio = ?, pendiente_entrega = ?, descripcion = ?, img_path = ? , activar = ?" +
             "WHERE id = ?";
     
     public ProductoDao() {
@@ -135,6 +135,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [4]=" + item.getPendienteEntrega() +
                             ", [5]=" + item.getDescripcion() +
                             ", [6]=" + item.getImgPath() +
+                            ", [7]=" + item.getActivar() +
                             "]"
             );
         } catch (final SQLException ex) {
@@ -169,11 +170,13 @@ public class ProductoDao implements IDao<Producto> {
             pst = conn.getConnection().prepareStatement(insert,
                     Statement.RETURN_GENERATED_KEYS);
             pst.setString(1, item.getId());
-            pst.setString(2, item.getNombre());
-            pst.setFloat(3, item.getPrecio());
-            pst.setBoolean(4, item.getPendienteEntrega());
-            pst.setString(5,item.getDescripcion());
-            pst.setString(6, item.getImgPath());
+            pst.setString(2, item.getIdCategoria());
+            pst.setString(3, item.getNombre());
+            pst.setFloat(4, item.getPrecio());
+            pst.setBoolean(5, item.getPendienteEntrega());
+            pst.setString(6,item.getDescripcion());
+            pst.setString(7, item.getImgPath());
+            pst.setBoolean(8, item.getActivar());
 
 
             pst.executeUpdate();
@@ -188,6 +191,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [5]=" + item.getPendienteEntrega() +
                             ", [6]=" + item.getDescripcion() +
                             ", [7]=" + item.getImgPath() +
+                            ", [8]=" + item.getActivar() +
 
                             "]"
             );
@@ -210,7 +214,8 @@ public class ProductoDao implements IDao<Producto> {
                     r.getBoolean("pendiente_entrega"),
                     r.getString("id_categoria"),
                     r.getString("descripcion"),
-                    r.getFloat("precio")
+                    r.getFloat("precio"),
+                    r.getBoolean("activar")
             );
             return sc;
         } catch (final SQLException ex) {
