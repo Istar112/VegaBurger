@@ -42,6 +42,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaForm
 
@@ -60,10 +61,8 @@ fun MainAdministrador(
     mainViewModel: MainAdministradorViewModel,
     administradorViewModel: AdministradorViewModel,
     dependientesViewModel: DependientesViewModel,
-    productosViewModel: ProductosViewModel,
-
-
     categoriasViewModel: CategoriasViewModel,
+    productosViewModel: ProductosViewModel,
     onExit: () -> Unit
 ) {
     val navController = rememberNavController()
@@ -146,7 +145,7 @@ fun MainAdministrador(
 
                 onExit()
             }, "Close", false)
-            )
+        )
     )
 
     //icono seleccionado
@@ -164,8 +163,8 @@ fun MainAdministrador(
 
                 PrincipalAdministrador()
             }
-            composable(AdminRoutes.Dependientes){
-                Dependientes(mainViewModel,dependientesViewModel,{
+            composable(AdminRoutes.Dependientes) {
+                Dependientes(mainViewModel, dependientesViewModel, {
                     dependientesViewModel.setSelectedDependiente(it)
                     navController.navigate(AdminRoutes.Dependiente) {
                         launchSingleTop = true
@@ -173,11 +172,11 @@ fun MainAdministrador(
                     }
                 })
             }
-            composable (AdminRoutes.Dependiente){
+            composable(AdminRoutes.Dependiente) {
                 DependienteForm(
-                    dependientesViewModel,{
+                    dependientesViewModel, {
                         navController.popBackStack()
-                    },{
+                    }, {
                         dependientesViewModel.save(it)
                         navController.popBackStack()
                     }
@@ -185,39 +184,48 @@ fun MainAdministrador(
             }
 
             // añado el producto
-            composable (AdminRoutes.Productos){
-                Productos(mainViewModel,productosViewModel,{
+            composable(AdminRoutes.Productos) {
+                Productos(mainViewModel, productosViewModel, {
                     productosViewModel.setSelectedProducto(it)
-                    navController.navigate(AdminRoutes.Producto){
-                        launchSingleTop=true
+                    navController.navigate(AdminRoutes.Producto) {
+                        launchSingleTop = true
                     }
                 })
             }
             // añado el form
-            composable (AdminRoutes.Producto) {
-                  ProductoForm(productosViewModel, {
-                      navController.popBackStack()
-                  }, {
-                      productosViewModel.save(it)
-                      navController.popBackStack()
-                  }
+            composable(AdminRoutes.Producto) {
+                ProductoForm(productosViewModel, {
+                    navController.popBackStack()
+                }, {
+                    productosViewModel.save(it)
+                    navController.popBackStack()
+                }
                 )
             }
-            composable (AdminRoutes.Categoria){
+            composable(AdminRoutes.Categoria) {
                 CategoriaForm(
-                    categoriasViewModel,{
+                    categoriasViewModel, {
                         navController.popBackStack()
-                    },{
+                    }, {
                         categoriasViewModel.save(it)
                         navController.popBackStack()
                     }
                 )
             }
-
-
+            composable(AdminRoutes.Categorias) {
+                Categorias(mainViewModel, categoriasViewModel, {
+                    categoriasViewModel.setSelectedCategoria(it)
+                    navController.navigate(AdminRoutes.Categoria) {
+                        launchSingleTop = true
+                    }
+                })
             }
+
+
+
         }
     }
+
 
 
 
