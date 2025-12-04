@@ -21,6 +21,11 @@ public class BBDDRepositorioPedidosJava {
     public void add(Pedido item){
         this.dao.insert(item);
     }
+
+    public boolean remove(Pedido item){
+        this.dao.delete(item);
+        return true;
+    }
     public boolean remove(String id){
         var item=this.dao.getById(id);
         if(item!=null){
