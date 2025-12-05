@@ -21,7 +21,7 @@ class CrearProductoUseCase(private val repositorio: IProductoRepositorio, privat
             pendienteEntrega = true,
             idCategoria = crearProductoCommand.idCategoria,
             descripcion = crearProductoCommand.descripcion,
-            precio = crearProductoCommand.precio,
+            precio = crearProductoCommand.precio.toFloat(),
             activar = crearProductoCommand.activar
         )
         val element = repositorio.findByName(item.nombre)

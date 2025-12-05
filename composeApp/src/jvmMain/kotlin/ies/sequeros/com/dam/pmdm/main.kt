@@ -2,8 +2,10 @@ package ies.sequeros.com.dam.pmdm
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava
 
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava
@@ -23,7 +25,9 @@ fun main() = application {
     val productoRepositorioJava= BBDDRepositorioProductosJava("/app.properties")
     val productoRepositorio: IProductoRepositorio = BBDDProductoRepository(productoRepositorioJava)
     
-    val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
+    val categoriaRepositorioJava = BBDDRepositorioCategoriasJava("/app.properties")
+    val categoriaRepository: ICategoriaRepositorio = BBDDCategoriaRepository(categoriaRepositorioJava)
+
 
     configureExternalLogging("logging.properties")
     Window(

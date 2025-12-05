@@ -7,6 +7,6 @@ data class CrearProductoCommand (
     var pendienteEntrega: Boolean,
     var idCategoria: String,
     var descripcion: String,
-    var precio: Float,
+    var precio: String,
     var activar: Boolean
 )

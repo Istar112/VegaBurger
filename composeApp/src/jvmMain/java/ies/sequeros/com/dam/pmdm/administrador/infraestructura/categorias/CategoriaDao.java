@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao;
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria;
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.IDao;
 
@@ -21,7 +20,7 @@ public class CategoriaDao implements IDao<Categoria> {
     private final String selectall = "select * from " + table_name;
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where nombre=?";
-    private final String deletebyid = "delete from " + table_name + " where id='?'";
+    private final String deletebyid = "delete from " + table_name + " where id=?";
     private final String insert = "INSERT INTO " + table_name + " (id, nombre, img_path,activar) " +
             "VALUES (?, ?, ?, ?)";
     private final String update = "UPDATE " + table_name + " SET nombre = ?, img_path = ?, activar = ? " +
@@ -115,6 +114,9 @@ public class CategoriaDao implements IDao<Categoria> {
                     conn.getConnection().prepareStatement(update);
             pst.setString(1, item.getNombre());
             pst.setString(2, item.getImgPath());
+            pst.setBoolean(3, item.getActivar());
+            pst.setString(4, item.getId());
+
 
             pst.executeUpdate();
             pst.close();
@@ -160,6 +162,7 @@ public class CategoriaDao implements IDao<Categoria> {
             pst.setString(1, item.getId());
             pst.setString(2, item.getNombre());
             pst.setString(3, item.getImgPath());
+            pst.setBoolean(4, item.getActivar());
 
             pst.executeUpdate();
             pst.close();
@@ -188,7 +191,7 @@ public class CategoriaDao implements IDao<Categoria> {
             sc=new Categoria(
                     r.getString("id"),
                     r.getString("nombre"),
-                    r.getString("imgPath"),
+                    r.getString("img_path"),
                     r.getBoolean("activar")
             );
                   

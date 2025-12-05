@@ -23,12 +23,13 @@ create table pedido(
 create table categoria(
     id varchar(50) not null,
     nombre varchar(50) not null,
+    img_path varchar(255),
     activar boolean not null,
     primary key(id)
 );
 create table producto(
     id varchar(50) not null,
-    id_categoria varchar(50) not null,
+    id_categoria varchar(50) null,
     nombre varchar(50) not null,
     precio decimal(10,2) not null,
     pendiente_entrega boolean not null,
@@ -36,7 +37,7 @@ create table producto(
     img_path varchar(255),
     activar boolean default false,
     primary key(id),
-    foreign key(id_categoria) references categoria(id) on delete cascade
+    foreign key(id_categoria) references categoria(id) on delete set null
 );
 
 create table linea_pedido(

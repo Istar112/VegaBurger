@@ -7,7 +7,7 @@ data class Producto (
     var nombre: String,
     var imgPath: String,
     var pendienteEntrega: Boolean,
-    var idCategoria: String,
+    var idCategoria: String?,
     var descripcion: String,
     var precio: Float,
     var activar: Boolean

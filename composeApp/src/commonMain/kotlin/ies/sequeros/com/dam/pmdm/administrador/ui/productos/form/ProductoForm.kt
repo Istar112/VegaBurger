@@ -41,8 +41,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.CategoriaDTO
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.productos.form.combobox.ComboBox
 import ies.sequeros.com.dam.pmdm.commons.ui.ImagenDesdePath
 import ies.sequeros.com.dam.pmdm.commons.ui.SelectorImagenComposable
 import vegaburguer.composeapp.generated.resources.Res
@@ -53,17 +54,20 @@ import vegaburguer.composeapp.generated.resources.hombre
 fun ProductoForm(
     //appViewModel: AppViewModel,
     productoViewModel: ProductosViewModel,
+    categoriasViewModel: CategoriasViewModel,
     onClose: () -> Unit,
     onConfirm: (datos: ProductoFormState) -> Unit = {},
     productoFormularioViewModel: ProductoFormViewModel = viewModel {
         ProductoFormViewModel(
             productoViewModel.selected.value, //onConfirm
         )
-    }
+    },
+    categoriaDTO: CategoriaDTO? = null
 ) {
     val state by productoFormularioViewModel.uiState.collectAsState()
     val formValid by productoFormularioViewModel.isFormValid.collectAsState()
     val selected = productoViewModel.selected.collectAsState()
+    val categorias = categoriasViewModel.items.collectAsState()
     val imgPath =
         remember { mutableStateOf(if (state.imgPath != null && state.imgPath.isNotEmpty()) state.imgPath else "") }
 
@@ -140,8 +144,8 @@ fun ProductoForm(
             }
             // Precio
             OutlinedTextField(
-                value = state.precio.toString(),
-                onValueChange = { productoFormularioViewModel.onPrecioChange(it.toFloat()) },
+                value = state.precio,
+                onValueChange = { productoFormularioViewModel.onPrecioChange(it )},
                 label = { Text("Precio") },
                 leadingIcon = { Icon(Icons.Default.Euro, contentDescription = null) },
                 isError = state.precioError != null,
@@ -149,15 +153,12 @@ fun ProductoForm(
             )
 
             // Combobox
-            ComboBox(
-                label = "Categoría",
-                opciones = listOf("Hamburguesas", "Bebidas", "Postres"
-                    , "Ensaladas", "Otros"),
-                valorSeleccionado = state.idCategoria,
-                onValorCambiado = { productoFormularioViewModel.onIdCategoriaChange(it)
-                },
-
-                modifier = Modifier.fillMaxWidth()
+            CategoriasComboBox(
+                categorias = categorias.value,
+                current = categoriaDTO,
+                onSelect = {
+                    productoFormularioViewModel.onIdCategoriaChange(it.id)
+                }
 
             )
 
