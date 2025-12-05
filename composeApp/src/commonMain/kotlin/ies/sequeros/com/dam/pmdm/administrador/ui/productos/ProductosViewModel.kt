@@ -64,7 +64,7 @@ class ProductosViewModel (
     fun switchEnableProducto(item: ProductoDTO) {
         val command = ActivarProductoCommand(
             item.id,
-            item.pendienteEntrega,
+            item.activar,
         )
 
         viewModelScope.launch {
@@ -81,6 +81,7 @@ class ProductosViewModel (
     // Delete
     fun delete(item: ProductoDTO) {
         viewModelScope.launch {
+            borrarProductoUseCase.invoke(item.id)
             _items.update { current ->
                 current.filterNot { it.id == item.id }.toMutableList()
             }

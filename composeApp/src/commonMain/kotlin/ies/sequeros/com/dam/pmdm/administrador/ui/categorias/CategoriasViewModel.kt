@@ -20,6 +20,7 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.cambiarpe
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.cambiarpermisos.CambiarPermisosUseCase
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.crear.CrearDependienteCommand
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.DependienteDTO
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.ProductoDTO
 
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria
@@ -27,6 +28,7 @@ import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaFromState
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteFormState
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 
 
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -38,7 +40,7 @@ import kotlinx.coroutines.launch
 class CategoriasViewModel(
     //private val administradorViewModel: MainAdministradorViewModel,
     private val categoriaRepositorio: ICategoriaRepositorio,
-     val almacenDatos: AlmacenDatos
+    val almacenDatos: AlmacenDatos
 ) : ViewModel() {
     //los casos de uso se crean dentro para la recomposición
     //se pueden injectar también, se tratará en próximos temas
@@ -93,7 +95,7 @@ class CategoriasViewModel(
 
     fun delete(item: CategoriaDTO) {
         viewModelScope.launch {
-            //  borrarDependienteUseCase.invoke(item.id)
+            borrarCategoriaUseCase.invoke(item.id)
             _items.update { current ->
                 current.filterNot { it.id == item.id }.toMutableList()
             }

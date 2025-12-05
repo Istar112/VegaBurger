@@ -5,7 +5,7 @@ import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 
 class BorrarCategoriaUseCase (private val repositorio: ICategoriaRepositorio, private val almacenDatos: AlmacenDatos){
-    suspend fun invoque(id: String){
+    suspend fun invoke(id: String){
         val tempo=repositorio.getById(id)
         val elementos =repositorio.getAll();
         if(tempo==null) {

@@ -194,7 +194,7 @@ fun MainAdministrador(
             }
             // añado el form
             composable(AdminRoutes.Producto) {
-                ProductoForm(productosViewModel, {
+                ProductoForm(productosViewModel, categoriasViewModel,{
                     navController.popBackStack()
                 }, {
                     productosViewModel.save(it)

@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros.FileProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FileDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemCategoriaRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +21,7 @@ class MainActivity : ComponentActivity() {
         val dependienteRepositorio: IDependienteRepositorio =
             FileDependienteRepository(almacenDatos)
         val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
-
+        val productosRepositorio: IProductoRepositorio = MemProductoRepository()
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
@@ -27,7 +30,12 @@ class MainActivity : ComponentActivity() {
             //pasan a la aplicación,
             val almacenImagenes:AlmacenDatos=  AlmacenDatos(this)
 
-            App(dependienteRepositorio, categoriaRepository, almacenImagenes)
+            App(
+                dependienteRepositorio,
+                categoriaRepository,
+                productosRepositorio,
+                almacenImagenes
+            )
         }
     }
 }

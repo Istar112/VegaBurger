@@ -7,7 +7,7 @@ data class ProductoFormState (
     var pendienteEntrega: Boolean = false,
     var idCategoria: String = "",
     var descripcion: String = "",
-    var precio: Float = 0.0f,
+    var precio: String = "",
     var activar: Boolean = false,
 
     // errores (null = sin error)

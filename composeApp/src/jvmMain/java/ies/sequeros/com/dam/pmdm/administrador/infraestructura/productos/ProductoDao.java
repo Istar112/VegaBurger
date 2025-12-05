@@ -27,7 +27,7 @@ public class ProductoDao implements IDao<Producto> {
             "VALUES (?, ?, ?, ?, ?, ?, ?,?)";
     
     private final String update = "UPDATE " + table_name +
-            " SET id_categoria = ?, nombre = ?, precio = ?, pendiente_entrega = ?, descripcion = ?, img_path = ? , activar = ?" +
+            " SET id_categoria = ?, nombre = ?, precio = ?, pendiente_entrega = ?, descripcion = ?, img_path = ? , activar = ? " +
             "WHERE id = ?";
     
     public ProductoDao() {
@@ -124,6 +124,10 @@ public class ProductoDao implements IDao<Producto> {
             pst.setBoolean(4, item.getPendienteEntrega());
             pst.setString(5, item.getDescripcion());
             pst.setString(6, item.getImgPath());
+            pst.setBoolean(7, item.getActivar());
+            pst.setString(8, item.getId());
+
+
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());

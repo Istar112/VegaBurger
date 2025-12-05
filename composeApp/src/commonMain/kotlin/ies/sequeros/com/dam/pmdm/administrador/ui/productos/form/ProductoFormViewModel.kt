@@ -23,7 +23,7 @@ class ProductoFormViewModel(
             pendienteEntrega = item?.pendienteEntrega ?: true,
             idCategoria = item?.idCategoria ?: "",
             descripcion = item?.descripcion ?: "",
-            precio = item?.precio ?: 0f,
+            precio = (item?.precio ?: "").toString(),
             activar = item?.activar ?: false,
         )
     )
@@ -48,7 +48,8 @@ class ProductoFormViewModel(
                     //!state.imgPath.isBlank() &&
                     //!state.idCategoria.isBlank() &&
                     !state.descripcion.isBlank() &&
-                    state.precio > 0
+                    !state.precio.isBlank()
+
         else {
             // validación para edidicón
             state.nombreError == null &&
@@ -88,8 +89,12 @@ class ProductoFormViewModel(
             _uiState.value.copy(idCategoria = v, idCategoriaError = validateIdCategoria(v))
     }
 
-    fun onPrecioChange(v: Float) {
-        _uiState.value = _uiState.value.copy(precio = v, precioError = validatePrecio())
+    fun onPrecioChange(input: String) {
+        val valor = input.toFloatOrNull()  // intento convertir a Float
+        _uiState.value = _uiState.value.copy(
+            precio = input,  // guardamos el string tal cual
+            precioError = validatePrecio(valor)
+        )
     }
 
     fun onImagePathChange(v: String) {
@@ -132,9 +137,12 @@ class ProductoFormViewModel(
         return null
     }
 
-    private fun validatePrecio(): String? {
-        if (_uiState.value.precio <= 0) return "El precio debe ser mayor que 0"
-        return null
+    private fun validatePrecio(valor: Float?): String? {
+        return when {
+            valor == null -> "El precio debe ser un número válido"
+            valor <= 0 -> "El precio debe ser mayor que 0"
+            else -> null
+        }
     }
 
     // tampoco seria necesario
@@ -153,7 +161,7 @@ class ProductoFormViewModel(
         val descripcionErr = validateDescripcion(s.descripcion)
         val pendienteEntregaErr = validatePendienteEntrega()
         val idCategoriaErr = validateIdCategoria(s.idCategoria)
-        val precioErr = validatePrecio()
+        val precioErr = validatePrecio(s.precio.toFloatOrNull())
         val activarErr = validateActivar()
 
         // se crea una copia con los errores actualizados
