@@ -18,13 +18,14 @@ import ies.sequeros.com.dam.pmdm.commons.infraestructura.IDao;
 public class ProductoDao implements IDao<Producto> {
     private DataBaseConnection conn;
     private final String table_name = "producto";
-    private final String selectall = "select * from " + table_name; 
+    private final String selectall = "select * from " + table_name;
+    private final String selectByCategoriaId = "select * from " + table_name + " where id_categoria=?";
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where nombre=?";
     private final String deletebyid = "delete from " + table_name + " where id=?";
     private final String insert = "INSERT INTO " + table_name + 
             " (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path, activar) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     
     private final String update = "UPDATE " + table_name +
             " SET id_categoria = ?, nombre = ?, precio = ?, pendiente_entrega = ?, descripcion = ?, img_path = ? , activar = ? " +
@@ -111,7 +112,35 @@ public class ProductoDao implements IDao<Producto> {
 
         return scl;
     }
+    public List<Producto> getByCategoriaId(String categoriaId){
+        final ArrayList<Producto> scl = new ArrayList<>();
+        Producto tempo;
+        PreparedStatement pst = null;
+        try {
+            try {
+                pst = conn.getConnection().prepareStatement(selectByCategoriaId);
+                pst.setString(1, categoriaId);
+            } catch (final SQLException ex) {
+                Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
+                        null, ex);
+            }
+            final ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                tempo = registerToObject(rs);
+                scl.add(tempo);
+            }
 
+            pst.close();
+            Logger logger = Logger.getLogger(ProductoDao.class.getName());
+            logger.info("Ejecutando SQL: " + selectByCategoriaId+ " | Parametros: ");
+
+        } catch (final SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
+                    null, ex);
+        }
+
+        return scl;
+    }
     @Override
     public void update(final Producto item) {
 
@@ -140,6 +169,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [5]=" + item.getDescripcion() +
                             ", [6]=" + item.getImgPath() +
                             ", [7]=" + item.getActivar() +
+                            ", [8]=" + item.getId() +
                             "]"
             );
         } catch (final SQLException ex) {
@@ -205,6 +235,7 @@ public class ProductoDao implements IDao<Producto> {
                     null, ex);
         }
     }
+
 
     //pasar de registro a objeeto
     private Producto registerToObject(final ResultSet r) {

@@ -59,5 +59,13 @@ class MemDependienteRepository: IDependienteRepositorio {
         return this.items[id];
     }
 
+    override suspend fun getIdDependienteActivo(): String {
+        for (item in items) {
+            if (item.value.enabled == true) {
+                return item.value.id   // devuelve el primero y termina
+            }
+        }
+        return "" // si no hay ninguno activo
+    }
 
 }

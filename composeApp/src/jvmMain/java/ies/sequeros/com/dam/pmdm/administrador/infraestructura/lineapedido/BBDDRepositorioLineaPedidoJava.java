@@ -50,6 +50,9 @@ public class BBDDRepositorioLineaPedidoJava {
         return this.dao.getById(id);
 
     }
+    public LineaPedido getByIdProducto(String id){
+        return this.dao.getByIdProducto(id);
+    }
 
     public List<LineaPedido> findByIds(List<String> ids){
         return null;

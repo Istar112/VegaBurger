@@ -100,5 +100,18 @@ class FileDependienteRepository(
         return null;
     }
 
+    override suspend fun getIdDependienteActivo(): String {
+        val elements = this.getAll()
+        var id = ""
+
+        for (element in elements) {
+            if (element.enabled == true) {
+                id = element.id
+                break
+            }
+        }
+
+        return id
+    }
 
 }

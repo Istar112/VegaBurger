@@ -60,4 +60,8 @@ public  class BBDDRepositorioDependientesJava {
             e.printStackTrace();
         }
     }
+
+    public String getIdDependienteActivo(){
+        return this.dao.getIdDependienteActivo();
+    }
 }

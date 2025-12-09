@@ -1,5 +1,6 @@
 package ies.sequeros.com.dam.pmdm.commons.infraestructura;
 
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,11 +25,15 @@ public class DataBaseConnection {
         } catch (IOException ex) {
            ex.printStackTrace();
         }
+        // Creamos el objeto para encryptar la contraseña
+        StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+        encryptor.setAlgorithm("PBEWithMD5AndDES");
+        encryptor.setPassword("contrasenya");
 
         // Establecer la conexion
         String database = props.getProperty("database.path");
-        String user = props.getProperty("database.user");
-        String password = props.getProperty("database.password");
+        String user = encryptor.decrypt(props.getProperty("database.user"));
+        String password = encryptor.decrypt(props.getProperty("database.password"));
         this.conexion = DriverManager.getConnection(database, user, password);
     }
 

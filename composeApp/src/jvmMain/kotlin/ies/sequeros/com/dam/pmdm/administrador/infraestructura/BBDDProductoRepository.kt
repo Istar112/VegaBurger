@@ -39,4 +39,8 @@ class BBDDProductoRepository(
         return bbddRepositorioProductosJava.getById(id)
 
     }
+
+    override suspend fun getByCategoriaId(categoriaId: String): List<Producto> {
+        return bbddRepositorioProductosJava.getByCategoriaId(categoriaId)
+    }
 }

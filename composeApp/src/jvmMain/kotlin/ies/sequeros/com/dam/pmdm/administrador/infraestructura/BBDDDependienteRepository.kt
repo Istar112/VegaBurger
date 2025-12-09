@@ -41,4 +41,8 @@ class BBDDDependienteRepository(
     override suspend fun getById(id: String): Dependiente? {
         return bbddRepositorioDepedientesJava.getById(id)
     }
+
+    override suspend fun getIdDependienteActivo(): String {
+        return bbddRepositorioDepedientesJava.idDependienteActivo
+    }
 }

@@ -23,10 +23,13 @@ class ActualizarProductoUseCase(private val repositorio: IProductoRepositorio, p
             nuevaImagePath = item.imgPath
         }
         var newProducto=item.copy(
+            idCategoria = command.idCategoria,
             nombre=command.nombre,
             activar = command.activar,
-            imgPath = nuevaImagePath
-
+            imgPath = nuevaImagePath,
+            descripcion = command.descripcion,
+            pendienteEntrega = command.pendienteEntrega,
+            precio = command.precio.toFloat()
         )
         repositorio.update(newProducto)
         return newProducto.toDTO(almacenDatos.getAppDataDir()+"/Producto/")
