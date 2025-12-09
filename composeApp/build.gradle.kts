@@ -53,6 +53,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             // https://mvnrepository.com/artifact/org.jetbrains.compose.material/material-icons-extended
             runtimeOnly("org.jetbrains.compose.material:material-icons-extended:1.7.3")
+            implementation("org.jasypt:jasypt:1.9.3")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

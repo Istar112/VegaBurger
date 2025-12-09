@@ -29,7 +29,7 @@ public class PedidoDao implements IDao<Pedido> {
     private final String findbyname = "select * from " + table_name + " where nombre_usuario=?";
     private final String deletebyid = "delete from " + table_name + " where id='?'";
     private final String insert = "INSERT INTO " + table_name + " (id, id_dependiente, np_totales, nombre_usuario,importe_total,np_pendiente_entrega) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            "VALUES (?, ?, ?, ?, ?, ?)";
     private final String update = "UPDATE " + table_name + " id_dependiente = = ?, np_totales = ?, nombre_usuario = ?, importe_total = ?, np_pendiente_entrega = ? " + "WHERE id = ?";
 
 

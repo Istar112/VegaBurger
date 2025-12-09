@@ -80,7 +80,11 @@ class FileProductoRepository (
             return items.toList()
         }
 
-        override suspend fun findByName(name: String): Producto? {
+    override suspend fun getByCategoriaId(categoriaId: String): List<Producto> {
+        return emptyList()
+    }
+
+    override suspend fun findByName(name: String): Producto? {
             val elements=this.getAll()
             for(element in elements){
                 if(element.nombre==name)

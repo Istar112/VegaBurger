@@ -86,7 +86,7 @@ class ProductoFormViewModel(
 
     fun onIdCategoriaChange(v: String) {
         _uiState.value =
-            _uiState.value.copy(idCategoria = v, idCategoriaError = validateIdCategoria(v))
+            _uiState.value.copy(idCategoria = v,idCategoriaError = validateIdCategoria(v))
     }
 
     fun onPrecioChange(input: String) {
@@ -118,7 +118,7 @@ class ProductoFormViewModel(
 
     // validamos imagen? obligatorio?
     private fun validateImagePath(path: String): String? {
-        //if (path.isBlank()) return "La imagen es obligatoria"
+        if (path.isBlank()) return "La imagen es obligatoria"
         return null
     }
 
@@ -133,7 +133,7 @@ class ProductoFormViewModel(
     }
     // ya veremos que hacemos con el id
     private fun validateIdCategoria(idCategoria: String): String? {
-       // if (idCategoria.isBlank()) return "La categoria es obligatoria"
+        if (idCategoria.isBlank()) return "La categoria es obligatoria"
         return null
     }
 

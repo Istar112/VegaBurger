@@ -46,6 +46,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 import ies.sequeros.com.dam.pmdm.commons.ui.ImagenDesdePath
 import ies.sequeros.com.dam.pmdm.commons.ui.SelectorImagenComposable
+import ies.sequeros.com.dam.pmdm.tpv.aplicacion.productos.ProductoDTO
 import vegaburguer.composeapp.generated.resources.Res
 import vegaburguer.composeapp.generated.resources.hombre
 
@@ -62,7 +63,6 @@ fun ProductoForm(
             productoViewModel.selected.value, //onConfirm
         )
     },
-    categoriaDTO: CategoriaDTO? = null
 ) {
     val state by productoFormularioViewModel.uiState.collectAsState()
     val formValid by productoFormularioViewModel.isFormValid.collectAsState()
@@ -81,7 +81,7 @@ fun ProductoForm(
         tonalElevation = 4.dp,
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surface
-    ){
+    ) {
         Column(
             modifier = Modifier
                 .padding(24.dp)
@@ -129,23 +129,21 @@ fun ProductoForm(
                 )
             }
 
-            // Descripcion
-            if (selected.value == null) {
-                OutlinedTextField(
-                    value = state.descripcion,
-                    onValueChange = { productoFormularioViewModel.onDescripcionChange(it) },
-                    label = { Text("Descripción") },
-                    isError = state.descripcionError != null,
-                    modifier = Modifier.fillMaxWidth(),
-                    minLines = 3,
+            OutlinedTextField(
+                value = state.descripcion,
+                onValueChange = { productoFormularioViewModel.onDescripcionChange(it) },
+                label = { Text("Descripción") },
+                isError = state.descripcionError != null,
+                modifier = Modifier.fillMaxWidth(),
+                minLines = 3,
 
 
                 )
-            }
+
             // Precio
             OutlinedTextField(
                 value = state.precio,
-                onValueChange = { productoFormularioViewModel.onPrecioChange(it )},
+                onValueChange = { productoFormularioViewModel.onPrecioChange(it) },
                 label = { Text("Precio") },
                 leadingIcon = { Icon(Icons.Default.Euro, contentDescription = null) },
                 isError = state.precioError != null,
@@ -155,14 +153,13 @@ fun ProductoForm(
             // Combobox
             CategoriasComboBox(
                 categorias = categorias.value,
-                current = categoriaDTO,
+                currentId = state.idCategoria,
                 onSelect = {
                     productoFormularioViewModel.onIdCategoriaChange(it.id)
+                    productoViewModel.setSelectedProducto(selected.value)
                 }
 
             )
-
-
 
 
             // Checkbox Activo y pendiente entrega
@@ -226,7 +223,9 @@ fun ProductoForm(
 
                                 onConfirm(it)
                             },
-                            onFailure = { /* no limpiar */ }
+                            onFailure = {
+                                println("Formulario inválido")/* no limpiar */
+                            }
                         )
 
 

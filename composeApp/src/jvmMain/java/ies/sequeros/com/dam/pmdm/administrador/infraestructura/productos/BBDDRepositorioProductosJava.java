@@ -50,6 +50,7 @@ public class BBDDRepositorioProductosJava {
     public List<Producto> findByIds(List<String> ids){
         return null;
     }
+    public List<Producto> getByCategoriaId(String categoriaId){return this.dao.getByCategoriaId(categoriaId);}
     public void close(){
         try {
             this.db.close();

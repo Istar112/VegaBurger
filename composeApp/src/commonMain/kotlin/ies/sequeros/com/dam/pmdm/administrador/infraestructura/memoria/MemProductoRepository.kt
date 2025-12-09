@@ -49,6 +49,10 @@ class MemProductoRepository: IProductoRepositorio {
     override suspend fun getAll(): List<Producto> {
         return this.items.values.toList();
     }
+    //IGUAL QUE GETALL PARA QUE COMPILE CAMBIAR
+    override suspend fun getByCategoriaId(categoriaId: String): List<Producto> {
+        return this.items.values.toList();
+    }
 
     override suspend fun findByName(name: String): Producto? {
         return this.items.values.firstOrNull { it.nombre.equals(name) };

@@ -10,7 +10,7 @@ fun Categoria.toDTO(path:String="") = CategoriaDTO(
     imgPath=path+imgPath,
     activar
 )
-fun Categoria.toCategoria()= Categoria(
+fun CategoriaDTO.toCategoria()= Categoria(
     id = id,
     nombre = nombre,
     imgPath=imgPath,

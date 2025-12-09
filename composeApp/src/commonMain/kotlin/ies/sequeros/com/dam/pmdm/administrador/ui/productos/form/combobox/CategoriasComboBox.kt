@@ -22,17 +22,19 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.Categ
 @Composable
 fun CategoriasComboBox(
     categorias: List<CategoriaDTO>,
-    current: CategoriaDTO?,
+    currentId: String?,
     onSelect: (CategoriaDTO) -> Unit
 ) {
-    var selected by remember { mutableStateOf<CategoriaDTO?>(current) }
+    var selected by remember {
+        mutableStateOf(categorias.find { it.id == currentId } ?: categorias.firstOrNull())
+    }
     var expanded by remember { mutableStateOf(false) }
     ExposedDropdownMenuBox(
         expanded = expanded,
         onExpandedChange = { expanded = it }
     ) {
         OutlinedTextField(
-            value = selected?.nombre?: "",
+            value = selected?.nombre ?: "",
             onValueChange = {},
             readOnly = true,
             label = { Text("Categoría") },
@@ -51,7 +53,7 @@ fun CategoriasComboBox(
                 DropdownMenuItem(
                     text = { Text(categoria.nombre) },
                     onClick = {
-                        selected=categoria
+                        selected = categoria
                         onSelect(categoria)
                         expanded = false
                     }
@@ -60,3 +62,4 @@ fun CategoriasComboBox(
         }
     }
 }
+

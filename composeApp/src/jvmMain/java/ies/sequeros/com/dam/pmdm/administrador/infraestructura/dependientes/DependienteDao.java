@@ -27,6 +27,10 @@ public class DependienteDao implements IDao<Dependiente> {
     private final String update =
             "UPDATE " + table_name + " SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? " +
                     "WHERE id = ?";
+
+    private final String getFirstActivo =
+            "SELECT id FROM " + table_name + " WHERE enabled = ? LIMIT 1";
+
     public DependienteDao() {
     }
 
@@ -37,6 +41,24 @@ public class DependienteDao implements IDao<Dependiente> {
     public void setConn(final DataBaseConnection conn) {
         this.conn = conn;
     }
+
+    public String getIdDependienteActivo() {
+        String id = null;
+        try {
+            PreparedStatement pst = conn.getConnection().prepareStatement(getFirstActivo);
+            pst.setBoolean(1, true);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                id = rs.getString("id");
+            }
+            rs.close();
+            pst.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return id;
+    }
+
 
     @Override
     public Dependiente getById(final String id) {

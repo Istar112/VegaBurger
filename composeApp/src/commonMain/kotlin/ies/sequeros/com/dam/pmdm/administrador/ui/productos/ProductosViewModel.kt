@@ -110,27 +110,31 @@ class ProductosViewModel (
             }
     }
 
-    //update
     fun update(formState: ProductoFormState) {
+        val selectedItem = selected.value ?: return
         val command = ActualizarProductoCommand(
-            selected.value!!.id!!,
-            formState.nombre,
-            formState.imgPath,
-            formState.pendienteEntrega,
-            formState.idCategoria,
-            formState.descripcion,
-            formState.precio,
-            formState.activar
+            id = selectedItem.id,
+            nombre = formState.nombre,
+            imgPath = formState.imgPath,
+            pendienteEntrega = formState.pendienteEntrega,
+            idCategoria = formState.idCategoria, // aseguramos que no sea null
+            descripcion = formState.descripcion,
+            precio = formState.precio,
+            activar = formState.activar
         )
         viewModelScope.launch {
-            val item = actualizarProductoUseCase.invoke(command)
+            val updatedItem = actualizarProductoUseCase.invoke(command)
+
+            // Actualizamos la lista
             _items.update { current ->
-                current.map { if (it.id == item.id) item else it } as MutableList<ProductoDTO>
+                current.map { if (it.id == updatedItem.id) updatedItem else it }.toMutableList()
             }
 
+            // Actualizamos el selected
+            _selected.value = updatedItem
         }
-
     }
+
 
     fun save(item: ProductoFormState) {
         if (_selected.value == null)

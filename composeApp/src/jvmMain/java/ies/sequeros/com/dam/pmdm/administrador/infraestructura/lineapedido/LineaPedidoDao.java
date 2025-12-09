@@ -63,6 +63,22 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
     }
 
 
+    public LineaPedido getByIdProducto(final String idProducto) {
+        LineaPedido sp = null;
+        try (PreparedStatement pst = conn.getConnection().prepareStatement(selectbyid_producto)) {
+            pst.setString(1, idProducto);
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) { // no while, solo necesitamos la primera coincidencia
+                    sp = registerToObject(rs);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sp; // puede ser null
+    }
+
+
     @Override
     public List<LineaPedido> getAll() {
         final ArrayList<LineaPedido> scl = new ArrayList<>();
@@ -103,6 +119,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.setString(2, item.getIdPedido());
             pst.setInt(3, item.getUnidades());
             pst.setFloat(4, item.getPrecio());
+            pst.setString(5, item.getId());
 
             pst.executeUpdate();
             pst.close();
@@ -179,8 +196,8 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             sc=new LineaPedido(
                     r.getString("id"),
                     r.getInt("unidades"),
-                    r.getString("idProducto"),
-                    r.getString("idPedido"),
+                    r.getString("id_producto"),
+                    r.getString("id_pedido"),
                     r.getFloat("precio")
                   );
             return sc;

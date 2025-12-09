@@ -4,15 +4,21 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDLineaPedidoRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.BBDDRepositorioLineaPedidoJava
 
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemCategoriaRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.BBDDRepositorioPedidosJava
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ILineaPedidoRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import java.io.FileInputStream
@@ -21,13 +27,17 @@ fun main() = application {
     val dependienteRepositorioJava=BBDDRepositorioDependientesJava("/app.properties")
     val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
 
-
     val productoRepositorioJava= BBDDRepositorioProductosJava("/app.properties")
     val productoRepositorio: IProductoRepositorio = BBDDProductoRepository(productoRepositorioJava)
     
     val categoriaRepositorioJava = BBDDRepositorioCategoriasJava("/app.properties")
     val categoriaRepository: ICategoriaRepositorio = BBDDCategoriaRepository(categoriaRepositorioJava)
 
+    val lineaPedidoRepositorioJava = BBDDRepositorioLineaPedidoJava("/app.properties")
+    val lineaPedidoRepositorio : ILineaPedidoRepositorio = BBDDLineaPedidoRepository(lineaPedidoRepositorioJava )
+
+    val pedidosRepositorioJava = BBDDRepositorioPedidosJava("/app.properties")
+    val pedidosRepositorio : IPedidoRepositorio = BBDDPedidoRepository(pedidosRepositorioJava )
 
     configureExternalLogging("logging.properties")
     Window(
@@ -43,6 +53,9 @@ fun main() = application {
             dependienteRepositorio,
             categoriaRepository,
             productoRepositorio,
+            lineaPedidoRepositorio,
+            pedidosRepositorio,
+
             AlmacenDatos())
 
     }
