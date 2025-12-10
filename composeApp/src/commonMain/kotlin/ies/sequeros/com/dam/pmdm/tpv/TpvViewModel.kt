@@ -64,8 +64,11 @@ class TpvViewModel (
     private val _productosFiltrados = MutableStateFlow<List<ProductoDTO>>(emptyList())
     val productosFiltrados = _productosFiltrados.asStateFlow()
 
-
     init {
+            cargarCategorias()
+    }
+
+    fun cargarCategorias() {
         viewModelScope.launch {
             val items = listarCategoriasUseCase.invoke()
             _itemsCategoria.value.clear()

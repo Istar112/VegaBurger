@@ -22,6 +22,8 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewM
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 import ies.sequeros.com.dam.pmdm.commons.ui.login.Login
 import ies.sequeros.com.dam.pmdm.commons.ui.login.LoginViewModel
+import ies.sequeros.com.dam.pmdm.dependiente.ui.MainDependiente
+import ies.sequeros.com.dam.pmdm.dependiente.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.tpv.TpvViewModel
 import ies.sequeros.com.dam.pmdm.tpv.ui.CInicioNombre
 import ies.sequeros.com.dam.pmdm.tpv.ui.MainTpv
@@ -62,6 +64,8 @@ fun App(
             almacenImagenes)
     }
     val loginViewModel = viewModel { LoginViewModel(dependienteRepositorio) }
+    val pedidosViewModel = viewModel { PedidosViewModel(pedidosRepositorio) }
+
     appViewModel.setWindowsAdatativeInfo( currentWindowAdaptiveInfo())
 
     val navController= rememberNavController()
@@ -139,6 +143,12 @@ fun App(
                     loginViewModel = loginViewModel,
                     "Nota: Solo puedes entrar si estas en la base de datos registrado," +
                             "Un admin te puede crear la cuenta"
+                )
+            }
+            composable(AppRoutes.Dependiente){
+                MainDependiente(
+                    pedidosViewModel,
+                    onExit = {navController.popBackStack()}
                 )
             }
 
