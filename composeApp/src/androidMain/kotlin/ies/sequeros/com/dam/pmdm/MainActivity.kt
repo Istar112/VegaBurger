@@ -4,8 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros.FileCategoriaRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros.FileLineaPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros.FileProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FileDependienteRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FilePedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemLineaPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemPedidoRepository
@@ -24,10 +27,11 @@ class MainActivity : ComponentActivity() {
         //se le pasa al repositorio
         val dependienteRepositorio: IDependienteRepositorio =
             FileDependienteRepository(almacenDatos)
-        val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
-        val productosRepositorio: IProductoRepositorio = MemProductoRepository()
-        val lneasPedidoRepositorio: ILineaPedidoRepositorio = MemLineaPedidoRepository()
-        val pedidosRepositorio: IPedidoRepositorio = MemPedidoRepository()
+        val categoriaRepository: ICategoriaRepositorio= FileCategoriaRepository(almacenDatos)
+        val productosRepositorio: IProductoRepositorio = FileProductoRepository(almacenDatos)
+        val lneasPedidoRepositorio: ILineaPedidoRepositorio =
+            FileLineaPedidoRepository(almacenDatos)
+        val pedidosRepositorio: IPedidoRepositorio = FilePedidoRepository(almacenDatos)
 
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)

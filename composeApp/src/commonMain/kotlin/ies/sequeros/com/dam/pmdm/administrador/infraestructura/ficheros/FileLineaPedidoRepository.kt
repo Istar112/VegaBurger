@@ -1,9 +1,7 @@
 package ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros
 
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ILineaPedidoRepositorio
-import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.LineaPedido
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import kotlinx.serialization.json.Json
 import java.io.File
@@ -19,7 +17,15 @@ class FileLineaPedidoRepository (
     }
 
     override suspend fun getByIdProducto(id: String): LineaPedido? {
-     return null
+        val path = getDirectoryPath()+"/"+this.fileName
+        val items= mutableListOf<LineaPedido>()
+        var json=""
+        if(File(path).exists()) {
+            json = almacenDatos.readFile(path)
+            if (!json.isEmpty())
+                items.addAll(Json.decodeFromString<List<LineaPedido>>(json))
+        }
+        return items.firstOrNull { it.idProducto == id }
     }
 
     private suspend fun getDirectoryPath(): String {
@@ -89,7 +95,7 @@ class FileLineaPedidoRepository (
 
 
     override suspend fun findByName(name: String): LineaPedido? {
-
+        // implementar codigo o ya veremos
         return null;
     }
 
