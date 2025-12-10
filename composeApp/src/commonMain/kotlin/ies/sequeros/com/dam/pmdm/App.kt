@@ -6,6 +6,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ies.sequeros.com.dam.pmdm.AppRoutes.LoginAdmin
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
@@ -19,6 +20,8 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+import ies.sequeros.com.dam.pmdm.commons.ui.login.Login
+import ies.sequeros.com.dam.pmdm.commons.ui.login.LoginViewModel
 import ies.sequeros.com.dam.pmdm.tpv.TpvViewModel
 import ies.sequeros.com.dam.pmdm.tpv.ui.CInicioNombre
 import ies.sequeros.com.dam.pmdm.tpv.ui.MainTpv
@@ -58,8 +61,9 @@ fun App(
             dependienteRepositorio,
             almacenImagenes)
     }
-
+    val loginViewModel = viewModel { LoginViewModel(dependienteRepositorio) }
     appViewModel.setWindowsAdatativeInfo( currentWindowAdaptiveInfo())
+
     val navController= rememberNavController()
 //para cambiar el modo
     AppTheme(appViewModel.darkMode.collectAsState()) {
@@ -69,10 +73,14 @@ fun App(
             startDestination = AppRoutes.Main
         ) {
             composable(AppRoutes.Main) {
-                Principal({
-                    navController.navigate(AppRoutes.Administrador)
+                Principal(
+
+                    {
+                    navController.navigate(AppRoutes.LoginAdmin)
                 },
-                    onDependiente = {},
+                    onDependiente = {
+                        navController.navigate(AppRoutes.LoginDependiente)
+                    },
                     onTPV = {
                         navController.navigate(AppRoutes.TPVnombre){
                         }
@@ -113,28 +121,26 @@ fun App(
 
 
             }
-//            composable (AppRoutes.TPVCategorias){
-//                CCategorias(
-//                    tpvViewModel,
-//                    onNext = {
-//                        navController.navigate(AppRoutes.TPVProductos)
-//                    },
-//                    onExit = {
-//                        navController.popBackStack()
-//                    },
-//
-//
-//                )
-//            }
-//            composable(AppRoutes.TPVProductos){
-//                TpvProductos(
-//                    tpvViewModel
-//                ,{ navController.popBackStack() },
-//                    {navController.popBackStack()}
-//                )
-//
-//            }
+            composable(AppRoutes.LoginAdmin){
+                Login(
+                    onNext = {navController.navigate(AppRoutes.Administrador) },
+                    onExit = {navController.popBackStack()},
+                    onAction = {loginViewModel.loginAdmin()},
+                    loginViewModel = loginViewModel,
+                    "Nota: Solo puedes iniciar si la cuenta es de tipo admin"
+                )
 
+            }
+            composable(AppRoutes.LoginDependiente){
+                Login(
+                    onNext = {navController.navigate(AppRoutes.Dependiente) },
+                    onExit = {navController.popBackStack()},
+                    onAction = {loginViewModel.loginDependiente()},
+                    loginViewModel = loginViewModel,
+                    "Nota: Solo puedes entrar si estas en la base de datos registrado," +
+                            "Un admin te puede crear la cuenta"
+                )
+            }
 
         }
     }

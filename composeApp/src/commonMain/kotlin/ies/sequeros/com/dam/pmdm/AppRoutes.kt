@@ -6,4 +6,6 @@ object  AppRoutes {
     const val Dependiente="dependiente"
     const val TPVnombre = "tpvnombre"
     const val TPVmain = "tpvmain"
+    const val LoginAdmin="loginAdmin"
+    const val LoginDependiente="loginDependiente"
 }
