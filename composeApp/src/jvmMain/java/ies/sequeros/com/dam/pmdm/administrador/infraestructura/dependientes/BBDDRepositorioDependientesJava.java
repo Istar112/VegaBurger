@@ -16,7 +16,7 @@ public  class BBDDRepositorioDependientesJava {
         this.db.open();
         dao= new DependienteDao();
         dao.setConn(this.db);
-
+        initRoot();
     }
     public void add(Dependiente item){
         this.dao.insert(item);
@@ -63,4 +63,23 @@ public  class BBDDRepositorioDependientesJava {
     public String getIdDependienteActivo(){
         return this.dao.getIdDependienteActivo();
     }
+
+    private void initRoot() {
+        Dependiente root = dao.findByName("root");
+
+        if (root == null) {
+            Dependiente admin = new Dependiente(
+                    java.util.UUID.randomUUID().toString(),
+                    "root",
+                    "root@admin.com",
+                    "root",
+                    "root",
+                    true,
+                    true
+            );
+
+            dao.insert(admin);
+        }
+    }
+
 }

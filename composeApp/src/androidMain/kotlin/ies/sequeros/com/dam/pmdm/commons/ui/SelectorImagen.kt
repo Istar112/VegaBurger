@@ -24,7 +24,7 @@ fun SelectorImagen(onImageSelected: (Uri) -> Unit) {
     Row {
 
     Button(onClick = {
-        launcher.launch("*")//"image/*")   // abre la galería
+        launcher.launch("image/*")//"image/*")   // abre la galería
     }) {
         Text("Seleccionar imagen")
     }
