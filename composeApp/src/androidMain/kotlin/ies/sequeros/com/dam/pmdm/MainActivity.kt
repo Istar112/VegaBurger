@@ -7,9 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros.FileProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FileDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemCategoriaRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemLineaPedidoRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ILineaPedidoRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 
@@ -22,6 +26,9 @@ class MainActivity : ComponentActivity() {
             FileDependienteRepository(almacenDatos)
         val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
         val productosRepositorio: IProductoRepositorio = MemProductoRepository()
+        val lneasPedidoRepositorio: ILineaPedidoRepositorio = MemLineaPedidoRepository()
+        val pedidosRepositorio: IPedidoRepositorio = MemPedidoRepository()
+
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
@@ -34,6 +41,8 @@ class MainActivity : ComponentActivity() {
                 dependienteRepositorio,
                 categoriaRepository,
                 productosRepositorio,
+                lneasPedidoRepositorio,
+                pedidosRepositorio,
                 almacenImagenes
             )
         }

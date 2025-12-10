@@ -9511,3 +9511,1225 @@ dic 09, 2025 10:28:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestruc
 INFO: Ejecutando SQL: UPDATE linea_pedido SET id_producto = ?, id_pedido = ?, unidades = ?, precio = ? WHERE id = ? | Params: [1]=9a33bded-0b05-4869-aa14-e13411896523, [2]=529c41a5-acfc-4bb8-99e8-253b6ddadb0b, [3]=3, [4]=9.0]
 dic 09, 2025 10:28:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao update
 INFO: Ejecutando SQL: UPDATE linea_pedido SET id_producto = ?, id_pedido = ?, unidades = ?, precio = ? WHERE id = ? | Params: [1]=40d5341c-a761-4066-aac8-42de1ea06b46, [2]=529c41a5-acfc-4bb8-99e8-253b6ddadb0b, [3]=2, [4]=7.0]
+dic 10, 2025 11:21:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+SEVERE: null
+java.sql.SQLSyntaxErrorException: Table 'vegaburguer.dependiente' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.getAll(DependienteDao.java:116)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava.getAll(BBDDRepositorioDependientesJava.java:41)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository.getAll(BBDDDependienteRepository.kt:34)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase.invoke(ListarDependientesUseCase.kt:15)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel$1.invokeSuspend(DependientesViewModel.kt:60)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel.<init>(DependientesViewModel.kt:59)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$3$0(App.kt:46)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:217)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:52)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/javax.swing.JRootPane.addNotify(JRootPane.java:721)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/java.awt.Window.addNotify(Window.java:791)
+	at java.desktop/java.awt.Frame.addNotify(Frame.java:495)
+	at java.desktop/java.awt.Window.pack(Window.java:829)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+dic 10, 2025 11:21:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+SEVERE: null
+java.sql.SQLSyntaxErrorException: Table 'vegaburguer.producto' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao.getAll(ProductoDao.java:98)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava.getAll(BBDDRepositorioProductosJava.java:42)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository.getAll(BBDDProductoRepository.kt:31)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.ListarProductosUseCase.invoke(ListarProductosUseCase.kt:10)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel$1.invokeSuspend(ProductosViewModel.kt:52)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel.<init>(ProductosViewModel.kt:51)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$4$0(App.kt:49)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:242)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:52)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/javax.swing.JRootPane.addNotify(JRootPane.java:721)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/java.awt.Window.addNotify(Window.java:791)
+	at java.desktop/java.awt.Frame.addNotify(Frame.java:495)
+	at java.desktop/java.awt.Window.pack(Window.java:829)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+dic 10, 2025 11:21:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+SEVERE: null
+java.sql.SQLSyntaxErrorException: Table 'vegaburguer.categoria' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.getAll(CategoriaDao.java:91)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.getAll(BBDDRepositorioCategoriasJava.java:54)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.getAll(BBDDCategoriaRepository.kt:30)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.ListarCategoriaUseCase.invoke(ListarCategoriaUseCase.kt:11)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$1.invokeSuspend(CategoriasViewModel.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.<init>(CategoriasViewModel.kt:65)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$5$0(App.kt:53)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:267)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:52)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/javax.swing.JRootPane.addNotify(JRootPane.java:721)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/java.awt.Window.addNotify(Window.java:791)
+	at java.desktop/java.awt.Frame.addNotify(Frame.java:495)
+	at java.desktop/java.awt.Window.pack(Window.java:829)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+dic 10, 2025 11:21:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+SEVERE: null
+java.sql.SQLSyntaxErrorException: Table 'vegaburguer.categoria' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.getAll(CategoriaDao.java:91)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.getAll(BBDDRepositorioCategoriasJava.java:54)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.getAll(BBDDCategoriaRepository.kt:30)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.ListarCategoriaUseCase.invoke(ListarCategoriaUseCase.kt:11)
+	at ies.sequeros.com.dam.pmdm.tpv.TpvViewModel$1.invokeSuspend(TpvViewModel.kt:70)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.tpv.TpvViewModel.<init>(TpvViewModel.kt:69)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$6$0(App.kt:57)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:292)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:52)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/javax.swing.JComponent.addNotify(JComponent.java:4846)
+	at java.desktop/javax.swing.JRootPane.addNotify(JRootPane.java:721)
+	at java.desktop/java.awt.Container.addNotify(Container.java:2804)
+	at java.desktop/java.awt.Window.addNotify(Window.java:791)
+	at java.desktop/java.awt.Frame.addNotify(Frame.java:495)
+	at java.desktop/java.awt.Window.pack(Window.java:829)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+dic 10, 2025 11:24:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 11:24:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 11:24:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:24:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:26:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 11:26:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 11:26:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:26:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:31:33 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 11:31:33 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 11:31:33 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:31:33 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:31:40 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 11:32:05 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 11:33:51 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 11:33:52 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 11:33:52 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:33:52 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:34:03 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 11:34:26 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=hamburguesas]
+dic 10, 2025 11:34:26 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=hamburguesas]
+dic 10, 2025 11:34:26 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFO: Ejecutando SQL: INSERT INTO categoria (id, nombre, img_path,activar) VALUES (?, ?, ?, ?) | Params: [1]=cc2f569b-8606-4b21-b378-93141d18ef08, [2]=hamburguesas, [3]=cc2f569b-8606-4b21-b378-93141d18ef08.jpeg, [4]=true]
+dic 10, 2025 11:34:55 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=bebidas]
+dic 10, 2025 11:34:55 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=bebidas]
+dic 10, 2025 11:34:55 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFO: Ejecutando SQL: INSERT INTO categoria (id, nombre, img_path,activar) VALUES (?, ?, ?, ?) | Params: [1]=5222e61a-6374-4c10-ae42-ff08775e053d, [2]=bebidas, [3]=5222e61a-6374-4c10-ae42-ff08775e053d.jpeg, [4]=true]
+dic 10, 2025 11:35:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=postres]
+dic 10, 2025 11:35:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=postres]
+dic 10, 2025 11:35:19 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFO: Ejecutando SQL: INSERT INTO categoria (id, nombre, img_path,activar) VALUES (?, ?, ?, ?) | Params: [1]=35e363ad-c7c0-4172-bcc0-47ccef95f603, [2]=postres, [3]=35e363ad-c7c0-4172-bcc0-47ccef95f603.jpeg, [4]=true]
+dic 10, 2025 11:35:56 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=Tarta de queso]
+dic 10, 2025 11:35:56 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=Tarta de queso]
+dic 10, 2025 11:35:56 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao insert
+INFO: Ejecutando SQL: INSERT INTO producto (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path, activar) VALUES (?, ?, ?, ?, ?, ?, ?, ?) | Params: [1]=01ce0e9c-667a-4660-8516-1f855b468651, [2]=35e363ad-c7c0-4172-bcc0-47ccef95f603, [3]=Tarta de queso, [4]=4.0, [5]=true, [6]=increiblee, [7]=01ce0e9c-667a-4660-8516-1f855b468651.jpeg, [8]=true]
+dic 10, 2025 11:36:35 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=cocacola]
+dic 10, 2025 11:36:35 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=cocacola]
+dic 10, 2025 11:36:35 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao insert
+INFO: Ejecutando SQL: INSERT INTO producto (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path, activar) VALUES (?, ?, ?, ?, ?, ?, ?, ?) | Params: [1]=8203d623-3b91-4dba-8bab-19c945018c0d, [2]=5222e61a-6374-4c10-ae42-ff08775e053d, [3]=cocacola, [4]=2.0, [5]=true, [6]=rica, [7]=8203d623-3b91-4dba-8bab-19c945018c0d.jpeg, [8]=true]
+dic 10, 2025 11:37:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=hamburguesa grande]
+dic 10, 2025 11:37:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=hamburguesa grande]
+dic 10, 2025 11:37:08 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao insert
+INFO: Ejecutando SQL: INSERT INTO producto (id, id_categoria, nombre, precio, pendiente_entrega, descripcion, img_path, activar) VALUES (?, ?, ?, ?, ?, ?, ?, ?) | Params: [1]=ec59c5d8-3e51-4032-9905-97f156a19fa5, [2]=cc2f569b-8606-4b21-b378-93141d18ef08, [3]=hamburguesa grande, [4]=8.0, [5]=true, [6]=mucho ketchup, [7]=ec59c5d8-3e51-4032-9905-97f156a19fa5.jpeg, [8]=true]
+dic 10, 2025 11:37:47 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 11:37:47 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 11:37:47 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:37:47 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 11:37:59 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 11:38:09 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 11:38:11 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 11:38:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO pedido (id, id_dependiente, np_totales, nombre_usuario,importe_total,np_pendiente_entrega) VALUES (?, ?, ?, ?, ?, ?) | Params: [1]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [2]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [3]=root, [4]=3, [5]=16.0, [6]=0]
+dic 10, 2025 11:38:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO linea_pedido (id, id_producto, id_pedido, unidades, precio) VALUES (?, ?, ?, ?, ?) | Params: [1]=4c9e41c4-b35f-494e-83ca-7c98249fffb3, [2]=1, [3]=01ce0e9c-667a-4660-8516-1f855b468651, [4]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [5]=4.0]
+dic 10, 2025 11:38:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO linea_pedido (id, id_producto, id_pedido, unidades, precio) VALUES (?, ?, ?, ?, ?) | Params: [1]=ce39f2f8-4f2e-4457-b95b-fce00028bbe6, [2]=1, [3]=ec59c5d8-3e51-4032-9905-97f156a19fa5, [4]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [5]=8.0]
+dic 10, 2025 11:39:01 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:23:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:23:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:23:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:23:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:23:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:23:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:24:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:24:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:24:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:24:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:24:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:24:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 12:24:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 12:24:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO pedido (id, id_dependiente, np_totales, nombre_usuario,importe_total,np_pendiente_entrega) VALUES (?, ?, ?, ?, ?, ?) | Params: [1]=b65f2bf4-7267-46a3-b83a-20c40586cb26, [2]=b65f2bf4-7267-46a3-b83a-20c40586cb26, [3]=root, [4]=4, [5]=32.0, [6]=0]
+dic 10, 2025 12:24:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao update
+INFO: Ejecutando SQL: UPDATE linea_pedido SET id_producto = ?, id_pedido = ?, unidades = ?, precio = ? WHERE id = ? | Params: [1]=ec59c5d8-3e51-4032-9905-97f156a19fa5, [2]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [3]=2, [4]=16.0]
+dic 10, 2025 12:25:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:34:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:34:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:34:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:34:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:34:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:34:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 12:34:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO pedido (id, id_dependiente, np_totales, nombre_usuario,importe_total,np_pendiente_entrega) VALUES (?, ?, ?, ?, ?, ?) | Params: [1]=4f3d4615-bb6f-49b9-be7c-77207e7df303, [2]=4f3d4615-bb6f-49b9-be7c-77207e7df303, [3]=root, [4]=2, [5]=8.0, [6]=0]
+dic 10, 2025 12:34:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao update
+INFO: Ejecutando SQL: UPDATE linea_pedido SET id_producto = ?, id_pedido = ?, unidades = ?, precio = ? WHERE id = ? | Params: [1]=01ce0e9c-667a-4660-8516-1f855b468651, [2]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [3]=2, [4]=8.0]
+dic 10, 2025 12:34:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:34:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:39:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:39:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:39:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:39:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:39:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:39:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:39:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:39:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=caca]
+dic 10, 2025 12:39:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFO: Ejecutando SQL: select * from categoria where nombre=? | Parametros: [name=caca]
+dic 10, 2025 12:39:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFO: Ejecutando SQL: INSERT INTO categoria (id, nombre, img_path,activar) VALUES (?, ?, ?, ?) | Params: [1]=13698211-1d3b-4892-9035-fbc0030c52e3, [2]=caca, [3]=13698211-1d3b-4892-9035-fbc0030c52e3.jpeg, [4]=false]
+dic 10, 2025 12:40:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:20 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:51 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:40:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: Ejecutando SQL: select * from categoria where id=? | Parametros: [id=13698211-1d3b-4892-9035-fbc0030c52e3]
+dic 10, 2025 12:40:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:40:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: Ejecutando SQL: select * from categoria where id=? | Parametros: [id=13698211-1d3b-4892-9035-fbc0030c52e3]
+dic 10, 2025 12:40:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao delete
+INFO: Ejecutando SQL: delete from categoria where id=? | Parametros: [id=13698211-1d3b-4892-9035-fbc0030c52e3]
+dic 10, 2025 12:41:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:41:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:41:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:41:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:41:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:41:09 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:46:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:46:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:46:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:46:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:46:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:46:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:46:23 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 12:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 12:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 12:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 12:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 12:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:05:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:05:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:05:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:05:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:05:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:05:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:05:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:06:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:06:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:06:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:06:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:06:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:07:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:07:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:13:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:13:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:13:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:13:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:13:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:13:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:13:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:14:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:14:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:14:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:14:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:14:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:14:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:14:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:14:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:14:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:17:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:17:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:17:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:17:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:17:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:17:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:17:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:17:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:17:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:20:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:20:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:20:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:20:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:20:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:20:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:20:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:23:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:23:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:23:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:23:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:23:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:23:24 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:23:24 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:27:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:27:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:27:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:27:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:27:15 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:27:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:27:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:27:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:27:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:27:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:27:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:27:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:28:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:28:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:29:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:29:56 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:31:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:31:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:31:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:31:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:31:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:31:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:31:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:31:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:33:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:33:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:33:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:33:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:33:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:33:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:33:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:35:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:35:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:35:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:35:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:35:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:35:46 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:35:46 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:36:11 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:36:11 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:37:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:37:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:37:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:37:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:37:14 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:37:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:37:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:38:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:38:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:38:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:38:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:38:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:38:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:38:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 1:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 1:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 1:47:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 1:47:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 1:47:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:08:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 3:08:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 3:08:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:08:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:08:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:08:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 3:08:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 3:08:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:08:23 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:08:24 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 3:08:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:08:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:08:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 3:39:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 3:39:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 3:39:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:39:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:39:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:40:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 3:40:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 3:40:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:40:20 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 3:40:25 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 3:40:29 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 3:40:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 3:40:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO pedido (id, id_dependiente, np_totales, nombre_usuario,importe_total,np_pendiente_entrega) VALUES (?, ?, ?, ?, ?, ?) | Params: [1]=5ccbd1bc-e5db-42f8-9e9e-e4112fd618ba, [2]=5ccbd1bc-e5db-42f8-9e9e-e4112fd618ba, [3]=root, [4]=3, [5]=10.0, [6]=0]
+dic 10, 2025 3:40:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao update
+INFO: Ejecutando SQL: UPDATE linea_pedido SET id_producto = ?, id_pedido = ?, unidades = ?, precio = ? WHERE id = ? | Params: [1]=01ce0e9c-667a-4660-8516-1f855b468651, [2]=801410b7-1014-4d9f-94b2-a7bf30c43c99, [3]=3, [4]=12.0]
+dic 10, 2025 3:40:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineapedido.LineaPedidoDao insert
+INFO: Ejecutando SQL: INSERT INTO linea_pedido (id, id_producto, id_pedido, unidades, precio) VALUES (?, ?, ?, ?, ?) | Params: [1]=92f71b12-cc37-446f-812f-bc5909b3261a, [2]=1, [3]=8203d623-3b91-4dba-8bab-19c945018c0d, [4]=5ccbd1bc-e5db-42f8-9e9e-e4112fd618ba, [5]=2.0]
+dic 10, 2025 3:40:47 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 3:40:47 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 3:40:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 5:16:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 5:16:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 5:16:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 5:16:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 5:16:26 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 5:16:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 5:16:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 5:17:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 5:17:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 8:53:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 8:53:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 8:53:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 8:53:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 8:53:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
+dic 10, 2025 8:53:25 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 8:53:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getByCategoriaId
+INFO: Ejecutando SQL: select * from producto where id_categoria=? | Parametros: 
+dic 10, 2025 8:53:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: Ejecutando SQL: select * from categoria | Parametros: 
+dic 10, 2025 8:53:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFO: Ejecutando SQL: select * from dependiente where name=? | Parametros: [name=root]
+dic 10, 2025 8:53:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 
