@@ -1,6 +1,5 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.categorias
 
-import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.BorrarCategoriaUseCase
@@ -12,21 +11,11 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.crear.CrearC
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.crear.CrearCategoriaUseCase
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.CategoriaDTO
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.ListarCategoriaUseCase
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.activar.ActivarDependienteCommand
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.actualizar.ActualizarDependienteCommand
 
-
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.cambiarpermisos.CambiarPermisosCommand
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.cambiarpermisos.CambiarPermisosUseCase
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.crear.CrearDependienteCommand
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.DependienteDTO
 
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
-import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaFromState
-import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteFormState
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaFormState
 
 
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -101,7 +90,7 @@ class CategoriasViewModel(
 
     }
 
-    fun add(formState: CategoriaFromState) {
+    fun add(formState: CategoriaFormState) {
         val command = CrearCategoriaCommand(
             formState.id,
             formState.nombre,
@@ -119,7 +108,7 @@ class CategoriasViewModel(
         }
     }
 
-    fun update(formState: CategoriaFromState) {
+    fun update(formState: CategoriaFormState) {
         val command = ActualizarCategoriaCommand(
             selected.value!!.id!!,
             formState.nombre,
@@ -137,7 +126,7 @@ class CategoriasViewModel(
 
     }
 
-    fun save(item: CategoriaFromState) {
+    fun save(item: CategoriaFormState) {
         if (_selected.value == null)
             this.add(item)
         else

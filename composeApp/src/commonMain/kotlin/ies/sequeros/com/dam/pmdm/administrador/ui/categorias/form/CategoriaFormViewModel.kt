@@ -1,9 +1,8 @@
-package ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from
+package ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categoria.listar.CategoriaDTO
-import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaFromState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -12,16 +11,16 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class CategoriaFromViewModel (private val item: CategoriaDTO?,
-                                onSuccess: (CategoriaFromState) -> Unit): ViewModel() {
+class CategoriaFormViewModel (private val item: CategoriaDTO?,
+                              onSuccess: (CategoriaFormState) -> Unit): ViewModel() {
 
-    private val _uiState = MutableStateFlow(CategoriaFromState(
+    private val _uiState = MutableStateFlow(CategoriaFormState(
         nombre = item?.nombre ?: "",
         activar = item?.activar?:false,
         imgPath = item?.imgPath?:"",
 
     ))
-    val uiState: StateFlow<CategoriaFromState> = _uiState.asStateFlow()
+    val uiState: StateFlow<CategoriaFormState> = _uiState.asStateFlow()
 
     //para saber si el formulario es válido
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
@@ -63,7 +62,7 @@ class CategoriaFromViewModel (private val item: CategoriaDTO?,
     }
 
     fun clear() {
-        _uiState.value = CategoriaFromState()
+        _uiState.value = CategoriaFormState()
     }
 
     private fun validateNombre(nombre: String): String? {
@@ -93,8 +92,8 @@ class CategoriaFromViewModel (private val item: CategoriaDTO?,
 
     //se le pasan lambdas para ejecutar código en caso de éxito o error
     fun submit(
-        onSuccess: ( CategoriaFromState) -> Unit,
-        onFailure: ((CategoriaFromState) -> Unit)? = null
+        onSuccess: (CategoriaFormState) -> Unit,
+        onFailure: ((CategoriaFormState) -> Unit)? = null
     ) {
         //se ejecuta en una corrutina, evitando que se bloque la interfaz gráficas
         viewModelScope.launch {

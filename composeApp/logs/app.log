@@ -138,3 +138,60 @@ dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestruc
 INFO: Ejecutando SQL: select * from dependiente where id=? | Parametros: [id=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
 dic 02, 2025 10:30:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
 INFO: Ejecutando SQL: UPDATE dependiente SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=victormanuel, [2]=victor@gmail.com, [3]=12345678Aa, [4]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922.jpeg, [5]=true, [6]=true, [7]=c77e5548-e2bc-4c61-8a9d-3d6776e1e922]
+dic 05, 2025 3:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 05, 2025 3:47:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 05, 2025 3:47:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 05, 2025 3:47:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 05, 2025 3:49:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=platanin]
+dic 05, 2025 3:49:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao findByName
+INFO: Ejecutando SQL: select * from producto where nombre=? | Parametros: [name=platanin]
+dic 05, 2025 3:49:32 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao insert
+SEVERE: null
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`vegaburguer`.`producto`, CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id`) ON DELETE CASCADE)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao.insert(ProductoDao.java:182)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava.add(BBDDRepositorioProductosJava.java:23)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository.add(BBDDProductoRepository.kt:11)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.crear.CrearProductoUseCase.invoke(CrearProductoUseCase.kt:30)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.crear.CrearProductoUseCase$invoke$1.invokeSuspend(CrearProductoUseCase.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+
+dic 05, 2025 3:49:46 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 05, 2025 3:49:46 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 9:56:24 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 9:56:24 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 10:21:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: Ejecutando SQL: select * from dependiente | Parametros: 
+dic 10, 2025 10:21:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: Ejecutando SQL: select * from producto | Parametros: 
+dic 10, 2025 10:21:28 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.PedidoDao getAll
+INFO: Ejecutando SQL: SELECT * FROM pedido | Parametros: 

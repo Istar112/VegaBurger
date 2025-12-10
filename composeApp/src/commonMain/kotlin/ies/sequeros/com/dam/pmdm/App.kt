@@ -10,12 +10,14 @@ import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministrador
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 
 @Suppress("ViewModelConstructorInComposable")
@@ -25,6 +27,7 @@ fun App(
     dependienteRepositorio : IDependienteRepositorio,
     categoriaRepository: ICategoriaRepositorio,
     productosRepositorio: IProductoRepositorio,
+    pedidosRepositorio: IPedidoRepositorio,
     almacenImagenes:AlmacenDatos    
 ) {
 
@@ -42,6 +45,9 @@ fun App(
     val categoriasViewModel = viewModel{ CategoriasViewModel(
         categoriaRepository, almacenImagenes
     )}
+
+    val pedidosViewModel = viewModel { PedidosViewModel(
+        pedidosRepositorio, almacenImagenes) }
 
     appViewModel.setWindowsAdatativeInfo( currentWindowAdaptiveInfo())
     val navController= rememberNavController()
@@ -65,7 +71,8 @@ fun App(
                     dependientesViewModel,
                     categoriasViewModel,
                     productosViewModel,
-                     {
+                    pedidosViewModel = pedidosViewModel,
+                     onExit = {
                     navController.popBackStack()
                 })
             }

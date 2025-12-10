@@ -1,6 +1,6 @@
-package ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from
+package ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form
 
-data class CategoriaFromState (
+data class CategoriaFormState (
     val id: String="",
     val nombre: String="",
     val imgPath: String="default",

@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
             FileDependienteRepository(almacenDatos)
         val categoriaRepository: ICategoriaRepositorio= MemCategoriaRepository()
 
+
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 

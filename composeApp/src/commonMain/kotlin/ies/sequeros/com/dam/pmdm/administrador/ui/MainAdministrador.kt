@@ -44,11 +44,13 @@ import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.from.CategoriaForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.Pedidos
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.form.ProductoForm
@@ -63,7 +65,8 @@ fun MainAdministrador(
     dependientesViewModel: DependientesViewModel,
     categoriasViewModel: CategoriasViewModel,
     productosViewModel: ProductosViewModel,
-    onExit: () -> Unit
+    pedidosViewModel: PedidosViewModel,
+    onExit: () -> Unit,
 ) {
     val navController = rememberNavController()
     val options by mainViewModel.filteredItems.collectAsState() //
@@ -220,12 +223,17 @@ fun MainAdministrador(
                     }
                 })
             }
-
-
-
+            composable(AdminRoutes.Pedido) {
+                Pedidos(
+                    mainAdministradorViewModel = mainViewModel,
+                    pedidosViewModel = pedidosViewModel,
+                    onSelectItem = { pedido ->
+                        pedidosViewModel.setSelectedPedido(pedido)
+                    }
+                )
+            }
         }
     }
-
 
 
 
